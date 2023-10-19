@@ -12,14 +12,14 @@ protocol Login {
 }
 
 
-class EmailLogin: Login {
-    let validator: LoginValidation
+public class EmailLogin: Login {
+    private let validator: LoginValidation
     
     init(validator: LoginValidation = LoginValidationImpl()) {
         self.validator = validator
     }
     
-    func login(email: String, password: String) -> Bool {
+    public func login(email: String, password: String) -> Bool {
         if !validator.validate(email: email) {
             return false
         }
@@ -28,7 +28,7 @@ class EmailLogin: Login {
         //1.validation
     }
     
-    static func build() -> EmailLogin {
+    public static func build() -> EmailLogin {
         let validator = LoginValidationImpl()
         return EmailLogin(validator: validator)
     }
