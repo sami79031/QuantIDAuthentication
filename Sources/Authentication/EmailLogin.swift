@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol Login {
+public protocol Login {
     func login(email: String, password: String) -> Bool
 }
 
