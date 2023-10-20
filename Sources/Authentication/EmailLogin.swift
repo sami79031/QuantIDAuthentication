@@ -7,10 +7,9 @@
 
 import Foundation
 
-public protocol Login {
+protocol Login {
     func login(email: String, password: String) -> Bool
 }
-
 
 public class EmailLogin: Login {
     private let validator: LoginValidation
